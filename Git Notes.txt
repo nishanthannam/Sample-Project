@@ -1,0 +1,253 @@
+           		Git :
+History of Git:
+a. Before developing Git, "Bitkeeper" software was used to manage the complex projects.
+b. In 2002, Linus Torvalds and his team started to develop "Linux Kernel" in 2002 and it was managed by "Bitkeeper" but "Bitkeeper" becomes paid software in 2005
+c. Linus Torvalds announced a project named "Git" on 6 April, 2005
+d. By using "Git", Linus Torvalds and his team managed "Kernel 2.6.12" release
+e. "Git 1.0" released on 21 December 2005
+
+Features of Git:
+a. Distributed Version Control System
+b. Open Source
+c. Have Large and Active Community
+
+Installation of Git:
+ a. Type "Git for Windows" and click on "Git.org" and click on "Download" button
+b. To check whether "Git" is successfuly installed or not, type "Git Bash" on the Start menu.
+c. If "Git Bash" is available, then "Git" is successfully installed otherwise not installed
+
+The commands used in Git are:
+a. To check the version of Git,
+                 Git version
+b. To configure a Git or to set up an Identity in Git,
+                  Git config --global user.name "Your name"
+                  Git config --global user.email "Your Git hub's email id"
+c. To find the information about a particular command in Git,
+                  Git help Command_name
+                  Git command_name --help	 
+
+Repository:
+a. In Git, the "Repository" is like a "Data structure" used by VCS to store metadata for a set of files and directories. 
+b. It contains the collection of the files as well as the history of changes made to those files. 
+c. "Repository" in Git is considered as your project folder. 
+d. A "Repository" has all the project-related data.
+
+Where does Repository lives on:
+a. Folder 
+b. Github
+c. Online host
+
+Github Account Creation:
+A. Definition of Github:
+a. "GitHub" is a code hosting platform for version control and collaboration. 
+b. It lets you and others work together on projects from anywhere
+c. "GitHub" is simply a collection of a large number of repositories
+
+B. "GitLab" is the same as the "GitHub"
+NOTE: The difference between "GitHub" and "Gitlab" is only its subscription plans
+
+C. 
+a. Type "Github.com" and create a new account by verifying username, email id, and password 
+b. We can get a verification code for the email id that we used to create the account in Github
+c. After verify the account by using the code in the email id, we will get our account done  
+d. By using the above steps, "Github" account will be created successfully
+
+Configuration of Git:
+a. The Git can be configured i.e., Git is connected to the Github
+b. The steps to set a Git for Identity purpose are:
+ 1. git config --global user.name "Your Name"
+ 2. git config --global user.email "The email id that used to connect Git bash"
+c. To see the list of all Git config files,
+                            git config --list
+
+NOTE: To exit and return to the Git command Window from VM Ware ----> :q
+
+Configuration of Notepad++:
+a. Download "Notepadd++" from Google
+b. The steps to configure Notepad++ to Git are:
+ 1. Open "Settings" and type "Advanced System Settings"
+ 2. In "Advanced System Settings", click on "Environment variables"
+ 3. In "Environment variables" Window, go to "System Variables"
+ 4. Add the path of "Notepad++" in "System Variables" Panel and click "OK"
+ 5. Now, open "Git Bash" and type "Notepad++" 
+ 6. If "Notepad++" opened, then the configuration is successful 
+c. To make Notepad++ as a default editor,
+                         git config --global core.editor "Notepad++.exe -multiInst -nosession"
+
+Git Workflow:
+The architecture of Git Workflow is:
+                                  Working Directory ------> Staging Area / Indexing Area -----> Local Repository ----> Remote Repository (Git Hub)
+                                                               ---->                                                    ---->                             ---->
+                                                                Add                                                      Commit                          Pull
+                                                                <-----------------------------------------------------------     <----
+                                                                                      Checkout                                                                   Push
+The commands used in Git Workflow are:
+a. To display a file present in the Working Directory in Staging Area -----> Git add 
+b. To display a file present in the Staging Area in a Local Repository ------> Git commit
+c. To display a file presen in the Local Repository in the Remote Repository ----> Git push
+d. To display a file present in the Remote Repository (Git Hub) in the Local repository ----> Git pull
+e. To exit from the Local repository and come to the Working Directory -----> Git checkout
+
+The terms used in the Git Workflow are:
+a. Master:
+ “Master” is the default name for a starting branch when you run git
+
+b. Origin:
+In Git, "Origin" is a shorthand name for the remote repository that a project was originally cloned from
+
+The command used to copy or clone a repository,
+                            Git clone <Repository URL>
+The command used to copy or clone a repository with a user defined name,
+                            Git clone <Repository URL> <User defined name>
+
+The command used to change Directory in Git Hub is: cd <Directory name>:
+The command used to create a folder in the folder is: mkdir <Folder name>
+The command used to move to a created folder in a Directory is: cd <Folder name>
+The command used to see all the content present in a folder is: ls
+The command used to see the content (Hidden and Unhidden) in a folder is: ls -al
+
+The command used to track the files i.e., the modified data is -----> Git status
+                                  
+Git commit:
+"Git commit" is of 2 types.They are:
+a. Inline commit -----> Git commit -m "Any Message"
+b. Direct commit ----> Git commit ---> It will open the default editor of Git and you have to type a message and close the editor. 
+                                                         The message will be reflected automatically in Git
+c. The command to see the complete description of the changes you made in the file before you commit is ----> git commit -v
+Where,
+"v" is "Verbose"
+d. The id of "Git commit" is ----> 40 characters
+e. The "Commit" is nothing but a snapshot 
+
+The command used to remove a repository from a Working Directory ----> rm -rf
+
+The command used to move multiple untracked filed from Working Directory to the Staging Area is -----> git add .
+
+The steps to initialise a local repository in the Git command line are:
+a. git init
+b. git add .
+c. git commit -m "First commit"
+d. git remote add origin <Repository URL>
+e. git push -u origin master
+
+NOTE: 
+Git pull:
+a. We use "Git pull" when one is working alone on the branch. 
+b. Since there is no point in reviewing your changes again, you can directly pull them to your repository. 
+c. Using "Git pull" command is no different than using Git merge command. 
+d. Just keep in mind that "git pull" is a short cut to "git fetch and git merge"
+
+Git stash:
+a. "git stash" temporarily shelves (or stashes) changes you've made to your working copy so you can work on something else, and then come back and re-apply them later on
+b. "git stash" is used after "git add" and before "git commit"
+
+Git clone Versus Git pull:
+a. "git clone" is used for just downloading exactly what is currently working on the remote server repository and saving it in your machine's folder where that project is placed.  
+b. "git pull" is a (clone(download) + merge) operation and mostly used when you are working as teamwork.
+
+Git log:
+a. "Git log" is a utility tool to review and read a history of everything that happens to a repository. 
+b. Multiple options can be used with a "git log" to make history more specific. 
+c. Generally, the "git log" is a record of commits.
+d. The command that is used to see the differences between 2 commits in "git log" is ----> git log -p
+e. The command that is used forthe specific number of commits in "git log" is ----> git log -<The specific number of commits> 
+Ex: git log -3 -----> This command shows the latest 3 commits
+f. The command that is used to describe the log in a consise manner is -----> git log --pretty=one line ---> This shows all the commits info in 1 line
+                                                                                                                   git log --pretty=short -----> This shows all the commits with short information
+                                                                                                                   git log --pretty=full -----> This shows all the commits with the name of author and committer
+                                                                                                                   git log --pretty=fuller -----> This shows all the commits with authors and committers and their creation date
+
+Status Life cycle:
+a. The status Life cycle has 2 types of  life cycles. They are:
+ 1. Tracked Life cycle
+ 2. Untracked Life cycle
+b. The "Tracked files" has 3 types of  files. They are:
+ 1. Unmodified state
+ 2. Modified state
+ 3. Staged state
+c. When we add the files in the "Untracked state", The resultant state directly converted to "Staged state"
+d. After we committed a "Untracked file", it will become "Modified file"
+		"Diagram of  Status Life cycle"
+
+The command used to shorten the "Git status" is ----> git status --short / git status -s
+The format we will see for "Untracked files" for short Git status is ----> ?? untracked
+git status -a ----> Status for staging area
+git status -M ----> Status for Modified files
+
+Ignoring files:
+a. The command to create a git ignore file in a project is -----> Notepad++ .gitignore / VI .gitignore
+b. In the project folder, a ".git ignore file" will be created in a .txt format
+
+Rules for .gitignore file:
+a. ".gitignore" ignores comments and blank lines
+b. The file that we have to ignore will be mentioned here directly
+c. Specified file format to ignore: Filename.Format_type
+d. If we want to ignore the files of specific type, we can also do that
+e. Specified format of the files to ignore: *.Format_name 
+f. We can ignore the folders also
+g. Specified format of a folder to ignore: Foldername/
+h. If we want a particular file from the ignored files present in ".gitignore", we will use "!Filename.Format_type
+
+Git Diff:
+a. "Git Diff" command is used in git to track the difference between the changes made on a file
+b. "Git Diff" command takes two inputs and reflects the differences between them. 
+c. It is not necessary that these inputs are files only. 
+d. It can be branches, working trees, commits, and more
+
+Git status:
+The "git status" command displays the state of the working directory and the staging area
+
+The command used to check the changes in the staged files line to line is ----> git diff --staged (or) git diff --cached
+
+Git status vs Git Diff:
+a. "git diff " depicts the changes between commits, commit and working tree, etc. 
+b. "git status" shows you the difference between the working directory and the index and it is helpful in understanding a git more comprehensively.
+
+Git Branch:
+a. The "git branch" command lets you create, list, rename, and delete branches. 
+b. "Git branch" doesn't let you switch between branches or put a forked history back together again. 
+c. For this reason, "git branch" is tightly integrated with the git checkout and git merge commands.
+d. "Git branch" is nothing but a pointer to the latest commit
+NOTE:
+a. "Head" in Git is used to indicate the name of the branch we are working in.
+b. Switching branches changes files in your Working Directory
+
+The command used to create a branch is ----> git branch <Branch name>
+The command used to move from one branch to another branch is ----> git checkout <The name of the branch you created>
+The command used to see all the commits (The commits present in other branches also) is ---> git log --all / git log --oneline --all
+The command used to represent all the commits in a grapical representation is ----> git log --all --graph
+The command used to create a branch and switching to the created branch at the same time is ----> git checkout -b <Branch name>
+
+Git merge:
+a. The "git merge" command lets you take the independent lines of development created by "git branch" and integrate them into a single branch
+b. The current branch will be updated to reflect the merge, but the target branch will be completely unaffected.
+c. There are 2 types of most commonly used merging strategies. They are:
+ 1. Fast forward merge
+ 2. Recursive merge
+
+Fast forward merge:
+a. "Fast forward merge" can be performed when there is a direct linear path (Same parent) from the source branch to the target branch. 
+b. In "fast-forward merge", git simply moves the source branch pointer to the target branch pointer without creating an extra merge commit.
+
+Recursive merge:
+a. "Recursive merge" is the default merge strategy when pulling or merging one branch. 
+b. Additionally, this merge can detect and handle merges involving renames, but currently cannot make use of detected copies. 
+c. This is the default merge strategy when pulling or merging one branch.
+
+Fast forward merge vs Recursive merge:
+    Fast Forward merge	                                  Recursive merge
+a. No new commits on the master	                      New commits on the master
+b. Linear History	                                       Commit 2 parents
+c. No merge commits	                                      Merge commit is created
+d. git rebase	                                      git merge–no-ff
+
+The command used to see the content present in a file in a repository is ---> cat <File name>
+The command used to merge 1 branch into another branch is ---> git merge <The branch you want to merge>
+The command used to delete a branch is ----> git branch -d <The branch you want to delete>
+The command used to view the name of the branches that we merged is ----> git branch --merge
+The command used to view the name of the branches that are not merged is ----> git branch --no-merge
+The command used to view all the branches you creates is -----> git branch -a
+
+Merge conflicts:
+a. A "merge conflict" is an event that occurs when Git is unable to automatically resolve differences in code between two commits. 
+b. When all the changes in the code occur on different lines or in different files, Git will successfully merge commits without your help.
