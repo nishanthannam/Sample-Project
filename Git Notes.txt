@@ -133,9 +133,15 @@ e. git push -u origin master
 NOTE: 
 Git pull:
 a. We use "Git pull" when one is working alone on the branch. 
-b. Since there is no point in reviewing your changes again, you can directly pull them to your repository. 
+b. Since there is no point in reviewing your changes again, you can directly pull them to your repository using "Git pull"
 c. Using "Git pull" command is no different than using Git merge command. 
 d. Just keep in mind that "git pull" is a short cut to "git fetch and git merge"
+e. "git pull" is a Git command used to update the local version of a repository from a remote.  
+f. By default, "git pull" does two things. 
+ 1. Updates the current local working branch (currently checked out branch) 
+ 2. Updates the remote tracking branches for all other branches
+g. In other words, we can say that
+           git pull = git fetch + git merge
 
 Git stash:
 a. "git stash" temporarily shelves (or stashes) changes you've made to your working copy so you can work on something else, and then come back and re-apply them later on
@@ -251,3 +257,26 @@ The command used to view all the branches you creates is -----> git branch -a
 Merge conflicts:
 a. A "merge conflict" is an event that occurs when Git is unable to automatically resolve differences in code between two commits. 
 b. When all the changes in the code occur on different lines or in different files, Git will successfully merge commits without your help.
+
+Remote Branching:
+In "Remote Branching",
+Origin/master and Origin/HEAD ------> remote References
+
+Git fetch:
+a. "Git fetch" downloads commits, objects and refs from another repository. 
+b. It fetches branches and tags from one or more repositories. 
+c. It holds repositories along with the objects that are necessary to complete their histories to keep updated remote-tracking branches.
+d. you can not directly pull the changes to your repository using "Git fetch"
+e. The changes of remote repository present in the remote reference "Origin/ Master"
+f. We have to merge "origin/master" after "git fetch" using the command ----> git merge origin master
+g. In other words,  we can say that
+            git fetch + git merge origin master = git pull
+
+Git push:
+a. The "git push" command is used to upload local repository content to a remote repository. 
+b. "Pushing' is how you transfer commits from your local repository to a remote repo.  
+c. Remote branches are configured using the "git remote" command. 
+d. "Pushing" has the potential to overwrite changes, caution should be taken when pushing.
+e. In real-time scenario, before pushing the changes into the remote repository, the best practice is "Pull" the changes in the remote repository to the local repository if any
+
+
