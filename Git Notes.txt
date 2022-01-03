@@ -146,6 +146,19 @@ g. In other words, we can say that
 Git stash:
 a. "git stash" temporarily shelves (or stashes) changes you've made to your working copy so you can work on something else, and then come back and re-apply them later on
 b. "git stash" is used after "git add" and before "git commit"
+c. In Recycle Bin,
+                    Delete ----> backup
+                    Shift + Delete ----> Permanent delete
+d. The "git stash" follows "LIFO" pattern
+
+The command used to stash a file in a temporary location is ----> git stash / git stash push
+The command used to see all the stashes is -----> git stash list
+The command used to apply the latest changes for a repository using stash is ---> git stash apply - This will bring out the latest change to the repository
+The command used to delete a stash is ----> git stash drop
+The command used to bring the latest changes from a particular file in a stash is ----> git stash apply stash@{<stash number>}
+The command used to simultaneously apply the changes of  a stash and automatically, the stash will be deleted is ---> git stash pop
+The command used to stash the untracked files is ----> git stash -u
+The command used to create a new branch in a stash is ----> git stash branch <Branch name> ----> This command will automatically apply the file to a new branch and automatically drops the file
 
 Git clone Versus Git pull:
 a. "git clone" is used for just downloading exactly what is currently working on the remote server repository and saving it in your machine's folder where that project is placed.  
@@ -279,4 +292,100 @@ c. Remote branches are configured using the "git remote" command.
 d. "Pushing" has the potential to overwrite changes, caution should be taken when pushing.
 e. In real-time scenario, before pushing the changes into the remote repository, the best practice is "Pull" the changes in the remote repository to the local repository if any
 
+p4merge Tool:
+a. "p4merge" is a tool used mainly for "git diff" and "git merge" visualisations
+b. In p4merge, "P" means "Perface"
+c. Go to "Perface.com" to download "p4merge" by selecting "Helix Visual Merge Tool(p4merge)"
+d. After downloading "p4merge", select the path to install "p4merge"
+e. Afetr the setting of path, select the necessary components (diff and merge) to install
+f. To open "p4merge" by using "Git Bash", Go to "Advanced System settings" and select "Environment avriables" and "System variables" and "Path" and add the path of "P4merge" in this window
+g. After reopening "Git Bash", p4merge can be opened by using "Git Bash"
 
+Configuration of p4merge tool to Git Bash:
+a. To configure "p4merge" by using "Git Bash", use the following commands:
+                          git config --global diff.tool p4merge
+                          git config --global difftool.p4merge.path "The path you set for p4merge" (In this command, only "forward slashes" are allowed)
+                          git config --global difftool.prompt false ------> This command allows not to open "p4merge" automatically
+
+                          git config --global merge.tool p4merge
+                          git config --global mergetool.p4merge.path "The path you set for p4merge" (In this command, only "forward slashes" are allowed)
+                          git config --global mergetool.prompt false ------> This command allows not to open "p4merge" automatically
+
+Git Aliases:
+The command used to view the commands of git as aliases is ----> git config --global alias.<alias name we want to give> "Git command we want to replace without Git word"
+ Example:
+We want to see all the commits of a repository. 
+To see all the commits of a repository,
+The command we will use is ----> git log --oneline --all --graph
+Now,
+We want to replace the above command to "git allcommits" by using alias.
+So,
+The command we use to give the alias for "git log --oneline --all --graph" is:
+                                     git config --global alias.allcommits "log --oneline --all --graph"
+
+Git Rebase:
+a. "Rebasing" is a process to reapply commits on top of another base trip. 
+b. It is used to apply a sequence of commits from distinct branches into a final commit. 
+c. It is an alternative of "git merge" command. 
+d. It is a linear process of merging
+
+The command used to view the content present in a particular commit is ----> git show <commit id>
+The command used to rebase the commits is ----> git rebase <Branch name>
+
+Git rebase vs Git merge:
+a. "Git rebase" and "Git merge" both integrate changes from one branch into another. 
+b. Where they differ is how it's done. 
+c. "Git rebase" moves a feature branch into a master. 
+d. "Git merge" adds a new commit, preserving the history.
+
+Git clean:
+a. "Git clean" is only applicable on "Untracked files", ".gitignore files"
+b. "Git clean" is like permanently deleting tht particular file and we can't back it up
+c. "Git clean" only deletes the files at default but not the folders
+
+The command used to clean the unwanted files is ---> git clean -f
+Where,
+        git clean -f -----> Forcedly delete the particular file permanently
+
+The command used to clean the unwanted folders is ----> git clean -f -d
+Where,
+                 -d ----> Directory / Folder
+
+The command used to clean the file formats mentioned in ".gitignore" file also is -----> git clean -f -d -x
+Where,
+                -x ----> The file format to delete present in ".gitignore file"
+
+The command used to view which untracked files will be deleted permanently if we use "Git clean" is ----> git clean -f -n / git clean -f --dry-run
+Where,
+                -n -----> Used for dry-run to view which untracked files will delete permanently
+
+Git stash vs Git clean:
+a.  git stash ---> All to remove everything but save it in a stash. 
+b. To remove all the untracked files in your working directory, you can run 
+		git clean -f -d  
+which removes any files and also any subdirectories that become empty as a result.
+
+Git tag:
+a. "Tags" are references that point to specific points in Git history / Git log. 
+b. "Tagging" is generally used to capture a point in history that is used for a marked version release (i.e. v1. 0.1). 
+c. A "tag" is like a branch that doesn't change. 
+d. Unlike branches, "tags", after being created, have no further history of commits
+e. "Git tags" are of 2 types. They are:
+ 1. Light Weight tags
+ 2. Annotated tags
+
+The command used to create a tag is ---> git tag <Tag name>
+The command used to see all the tags is ----> git tag / git tag -l / git tag --list
+The command used to create the annotated tags is ----> git tag -a <Tag name> -m "Description about the tag"
+                                                                                     git tag -a <Tag name> ---> Opens the default editor and you can enter the description for that tag and save it
+Where,
+                  -a ----> Annotated tag
+The command used to compare 2 different tags is ----> git diff <Tag name 1> <Tag name 2> .....
+The command used to create a tag for the old commits is ----> git tag -a <Tag name> <commit id>
+                                                                                              git tag -a <Tag name> <commit id> -m "Description about the tag"
+The command used to update the tag to another commit without deleting a tag is ----> git tag -a <tag name> -f <Commit id that we want to update from the previous commit> -m "Description about the tag"
+The command that is used to delete a tag is ----> git tag -d <Tag name>
+The command that is used to push tags into the remote repository is ---> git push origin <Tag name> ---> For 1 tag
+                                                                                                             git push origin --tags ----> For multiple tags simultaneously
+The command used to view the list of the tags of a certain version is ---> git tag -list "<The tag name we want to search.*>"
+                                                                                                              Ex: git tag -list "v1.*"
