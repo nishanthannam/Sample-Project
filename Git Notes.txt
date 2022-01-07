@@ -122,6 +122,7 @@ e. The "Commit" is nothing but a snapshot
 The command used to remove a repository from a Working Directory ----> rm -rf
 
 The command used to move multiple untracked filed from Working Directory to the Staging Area is -----> git add .
+The command used to move only 1 file into the local repository is ----> git commit -m "Commit Message" <File name>
 
 The steps to initialise a local repository in the Git command line are:
 a. git init
@@ -389,3 +390,49 @@ The command that is used to push tags into the remote repository is ---> git pus
                                                                                                              git push origin --tags ----> For multiple tags simultaneously
 The command used to view the list of the tags of a certain version is ---> git tag -list "<The tag name we want to search.*>"
                                                                                                               Ex: git tag -list "v1.*"
+
+Git reset:
+a. "git reset" is a powerful command that is used to undo local changes to the state of a Git repo. 
+b. "Git reset" operates on "The Three Trees of Git". 
+c. These trees are the Commit History ( HEAD ), the Staging Index, and the Working Directory. 
+d. There are three command line options that correspond to the three trees
+
+The command used to unstage the staged file from the Staging area to the Working Directory is ----> git reset head <File names you want to unstage>
+The command used to unstage the staged file from the Local repository to the Staging area is ----> git reset --soft <Commit id of the files you want to unstage>
+The command used to delete the unwanted files is -----> rm <File names you want to delete>
+
+SVN versus Git:
+
+
+Git hooks:
+a. "Git hooks" are scripts that run automatically every time a particular event occurs in a Git repository. 
+b. They let you customize Git's internal behavior and trigger customizable actions at key points in the development life cycle.
+
+In Git, there are 3 types of hooks. They are:
+ a. Pre hooks:
+"Pre hooks" will execute before executing the command in Git
+
+ b. Update hooks:
+"Update hooks" will run while the command in Git is running
+
+ c. Post hooks:
+"Post hooks" will run after the execution of command in Git is completed
+
+Generation of SSH keypair for cloning a Repository:
+a. We will clone the Git Repository in 2 types. They are:
+ 1. HTTP format
+ 2. SSH format
+b. In SSh format, the two types of keys will be formed. They are:
+ 1. Private key
+ 2. Public key
+c. We will keep private key safe and use public key
+d. After generating the keys, go to the directory where the ssh keys are present in Git Bash
+e. Copy the content of "public key" in Git Bash
+f. Open Github and go to settings that is applicable to all of  your repositories in Git hub. i.e., "Global settings"
+g. Copy the content there in "SSH and GCP keys" module and save it
+
+The command used to create a SSh keypair is ----> ssh-keygen
+
+NOTE:
+"8080" is the port number for "Jenkins"
+
