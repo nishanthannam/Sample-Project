@@ -435,4 +435,6 @@ The command used to create a SSh keypair is ----> ssh-keygen
 
 NOTE:
 "8080" is the port number for "Jenkins"
+The command to see the logs for a specific day is:
+	git log --after="<Specific date> 00:00" --before="<Specific date> 23:59"
 
